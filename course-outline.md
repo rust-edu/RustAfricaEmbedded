@@ -10,10 +10,10 @@ Bart Massey 2025-09
    * Rust variables
    * Rust expressions and statements
    * Rust functions
+   * Rust references
 
 2. More Rust
    * **Reading:** [*The Rust Programming Language*] chapters 5-6, 7.1, 9-10
-   * Rust references
    * Rust structs and enums
    * Rust traits
    * Rust error handling

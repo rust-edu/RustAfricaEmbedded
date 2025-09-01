@@ -18,3 +18,9 @@
 * Will try to adjust pace to fit
 * Definitely play outside of class; use chat
 
+## Acks
+
+* Rust Africa
+* Futurewei
+* Rust Embedded Working Group
+* Portland State University
