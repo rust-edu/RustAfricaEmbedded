@@ -4,6 +4,17 @@ Bart Massey 2025
 This repo is the "home page" for the Rust Africa Embedded
 2025 course, containing course links and documents.
 
+## Slides
+
+The slides can be presented using [`presenterm`](https://github.com/mfontanini/presenterm)
+
+You can either present the markdown files directly or download the PDF files. 
+
+You can find the slides [here](./slides/slides.md)
+
+
+## Other links
+
 * [Course Outline](course-outline.md)
 * [Rustup](https://rustup.rs)
 * [*The Rust Programming Language*](https://doc.rust-lang.org/book/)
