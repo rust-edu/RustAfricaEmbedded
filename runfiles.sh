@@ -15,7 +15,7 @@ declare -A file_paths
 echo "Available files"
 rust_files=(day*/**/main.rs)
 for index in "${!rust_files[@]}"; do
-    echo "$((index+1)). ${rust_files[$1]}"
+    echo "$((index+1)). ${rust_files[$index]}"
 done
 
 
