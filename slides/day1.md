@@ -511,3 +511,80 @@ fn main() {
   println!("Returned value : {ret_num}");
 }
 ```
+
+---
+
+# Memory in Rust
+
+Memory in Rust is managed through ownership, borrowing, and lifetimes, ensuring safety without a garbage collector.
+
+## Example 
+
+```rust +exec
+fn main() {
+    let s1 = String::from("Hello"); // allocated on the heap
+    let s2 = &s1;                   // borrowed reference (no copy)
+    println!("s1: {}, s2: {}", s1, s2);
+} // memory for `s1` is automatically freed here
+```
+
+---
+
+# References vs Pointers in Rust
+
+| Feature | References (`&T`, `&mut T`) | Raw Pointers (`*const T`, `*mut T`) |
+| --------------- | --------------- | --------------- |
+| Safety | Always safe | Unsafe, can cause undefined behaviour |
+| Nullability | Cannot be NULL | Can be `NULL` (NULL Pointers) |
+| Dereferencing | Safe, no `unsafe` block required | Requires `unsafe` block |
+| Lifetimes | Must follow lifetime rules | No lifetime checks |
+| Mutability | `&T` is immutable, `&mut T` is mutable | `*const T` is immutable, `*mut T` is mutable |
+| Ownership | Enforces (No dangling, aliasing) | Not enforced (May cause dangling pointers) |
+| Usage | Everyday Rust code (Safe borrowing) | Low level memory manipulation |
+
+
+---
+
+# References vs Pointers in Rust (Example Code)
+
+<!--column_layout: [1, 1]-->
+<!--column: 0-->
+
+## References (Safe)
+
+```rust +exec
+fn main() {
+    let x = 42;
+    let r: &i32 = &x;   // reference to x (safe)
+    println!("Reference points to: {}", r);
+}
+```
+
+<!--column: 1-->
+
+## Pointers (Unsafe)
+
+```rust +exec
+fn main() {
+    let x = 42;
+    let p: *const i32 = &x;   // raw pointer to x
+
+    unsafe {
+        println!("Raw pointer points to: {}", *p); // dereference requires unsafe
+    }
+}
+```
+
+---
+
+# Print memory address of a reference 
+
+The below program prints the memory address of a value's reference
+
+```rust +exec
+fn main() {
+  let x: i32 = 57;
+  println!("Value: {x}");
+  println!("Memory location: {:p}", &x);
+}
+```
