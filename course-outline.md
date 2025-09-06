@@ -14,7 +14,9 @@ Bart Massey 2025-09
 
 2. More Rust
    * **Reading:** [*The Rust Programming Language*] chapters 5-6, 7.1, 9-10
+   * Rust move semantics and ownership
    * Rust structs and enums
+   * Rust arrays
    * Rust traits
    * Rust error handling
    * `no_std` Rust with `core`
