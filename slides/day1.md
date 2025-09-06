@@ -5,7 +5,6 @@ theme :
     name: catppuccin-mocha
 options: 
     end_slide_shorthand: true
-
 ---
 
 # Rust tools 
@@ -586,5 +585,65 @@ fn main() {
   let x: i32 = 57;
   println!("Value: {x}");
   println!("Memory location: {:p}", &x);
+}
+```
+
+---
+
+# Borrowing in Rust 
+
+Borrowing in Rust means accessing data through references (`&` or `&mut`) without taking ownership.
+
+## Example 
+
+```rust +exec
+fn main() {
+    let s = String::from("Hello");
+
+    // Immutable borrow
+    let r1 = &s;
+    println!("Immutable borrow: {}", r1);
+
+    // Mutable borrow
+    let mut s2 = String::from("World");
+    let r2 = &mut s2;
+    r2.push_str("!");
+    println!("Mutable borrow: {}", r2);
+}
+```
+
+---
+
+# Borrow Error 
+
+Here’s an example that shows how the borrow checker prevents unsafe aliasing:
+
+```rust +exec
+fn main() {
+    let mut s = String::from("Rust");
+
+    let r1 = &s;      // immutable borrow
+    let r2 = &s;      // another immutable borrow
+    let r3 = &mut s;  // ❌ mutable borrow while immutable borrows exist
+
+    println!("{}, {}, {}", r1, r2, r3);
+}
+```
+
+---
+
+# Fixed code (Previous Slide)
+
+```rust +exec
+fn main() {
+    let mut s = String::from("Rust");
+
+    let r1 = &s;
+    let r2 = &s;
+    println!("{}, {}", r1, r2); // immutable borrows used here
+
+    let r3 = &mut s; // mutable borrow is fine now
+    r3.push_str("acean!");
+    println!("{}", r3);
 }
 ```
