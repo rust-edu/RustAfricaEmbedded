@@ -277,3 +277,237 @@ fn main() {
   println!("{x}");
 }
 ```
+
+---
+
+# Control Flow in Rust
+
+1. `if-else` -> Conditional branching based on a boolean expression
+2. `if let` -> Pattern-matching shorthand for `if` with a single pattern
+3. `match` -> Exhaustive branching based on patterns.
+4. `loop` -> Infinite loop that runs unless explicitly broken.
+5. `while` -> Loop that runs until the given condition becomes false.
+6. `while let` -> Loop that run until a given pattern matches.
+7. `for` -> Iterate over the elements of an iterator.
+8. `break` -> Exits a loop
+9. `continue` -> Skips to the next loop iteration. 
+10. `return` -> Exits a function and returns a value.
+
+---
+
+# `if-else` statements
+
+These are used to evaluate a condition and returns one of two or more values depending on whether the condition is `true` or `false`
+
+## Example
+
+```rust +exec
+fn main(){
+  let b = 0.5;
+  if b > 0.1 {
+    println!("{b} > 0.1");
+  } else {
+    println!("{b} < 0.1");
+  }
+}
+```
+
+---
+
+# `if-let` statement
+
+This statement runs a code if a value matches a single pattern.
+
+## Example
+
+```rust +exec
+fn main() {
+    let opt = Some(10);
+    if let Some(val) = opt {
+        println!("val is {}", val);
+    }
+}
+```
+---
+
+# `match` statement
+
+Performs branching by matching patterns exhaustively. Similar to `switch-case` of C/C++.
+
+```rust +exec 
+fn main() {
+  let num = 2;
+  match num {
+      1 => println!("One"),
+      2 => println!("Two"),
+      _ => println!("Something Else : {}", num)
+  }
+}
+```
+
+---
+
+# `loop` statement
+
+Creates an infinite loop until explicitly broken.
+
+```rust +exec
+fn main() {
+  let mut count = 0;
+  loop {
+    count += 1;
+    if count == 3 {
+        println!("Breaking at count = {count}");
+        break;
+    }
+  }
+}
+```
+
+---
+
+# `while` statement
+
+Loops as long a given statement is `true`
+
+```rust +exec
+fn main() {
+  let mut n = 3;
+  while n > 0 {
+      println!("n : {n}");
+      n -= 1;
+  }
+}
+```
+---
+
+# `while let` statement
+
+Loops until the given value matches a pattern.
+
+```rust +exec
+fn main() {
+  let mut opt = Some(3);
+  while let Some(val) = opt {
+    println!("{val}");
+    opt = if val > 1 {
+      Some(val - 1)
+    } else {
+      None
+    };
+  }
+}
+```
+
+---
+
+# `for` loop
+
+Iterates over the items in an iterator
+
+```rust +exec
+fn main() {
+  for i in 1..=4{   // Also includes 4 as part of the for loop
+      println!("{i}");
+  }
+}
+```
+
+---
+
+# `break` statement
+
+Exits a loop immediately
+
+```rust +exec
+
+fn main() {
+  for i in 1.. {   // Iterates from 1 to infinity
+    if i == 3 {
+        break;
+    }
+    println!("{i}");
+  }
+}
+```
+
+---
+
+# `continue` statement
+
+Skips the rest of the current loop iteration
+
+```rust +exec
+fn main() {
+  for i in 1..5 {
+    if i == 3 {
+      continue;
+    }
+    println!("{i}");
+  }
+}
+```
+
+---
+
+# `return` statement
+
+Exits a function and returns a value
+
+Two ways to return a value from a function
+
+<!--column_layout: [1, 1]-->
+
+<!--column: 0-->
+## Using `return` statement 
+
+```rust +exec
+fn square(x: i32) -> i32 {  // Returns i32
+    return x * x;
+}
+
+fn main() {
+  let n: i32 = square(4);
+  println!("Square of 4 is : {n}");
+
+}
+```
+
+<!--column: 1-->
+
+## Without using `return` statement
+
+
+```rust +exec
+fn square(x: i32) -> i32 {
+  x * x        // There is no semicolon (;) here 
+}
+
+fn main() {
+  let val: i32 = square(4);
+  println!("Square of 4 is : {val}");
+}
+```
+
+---
+
+# Functions in Rust
+
+Functions are reusable blocks of code that may or may not return a value.
+
+```rust +exec
+fn ret_val(x: i32) -> f64 {   // Return f64
+  x as f64     // Change i32 to f64 and return it
+}
+
+fn print_smth() {
+  println!("Function call");       //This function doesn't return anything
+}
+
+fn main() {
+  print_smth();
+  let num: i32 = 89;
+  let ret_num: f64 = ret_val(num);
+  println!("Returned value : {ret_num}");
+}
+```
