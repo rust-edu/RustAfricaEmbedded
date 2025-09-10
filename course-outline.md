@@ -17,16 +17,14 @@ Bart Massey 2025-09
    * Rust move semantics and ownership
    * Rust structs and enums
    * Rust arrays
-   * Rust traits
-   * Rust error handling
-   * `no_std` Rust with `core`
-
-## Break Week (no class)
 
 ## Week 2: Beginning Rust Embedded
 
 1. Understanding Embedded
    * **Reading:** [*Rust Embedded Discovery Book*] chapters 1-5
+   * Rust traits
+   * Rust error handling
+   * `no_std` Rust with `core`
    * Embedded dev boards / micro:bit v2 (MB2)
    * microcontrollers / nRF52833
    * Assembly / machine instructions / ARM
