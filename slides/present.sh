@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-presenterm -x $1
+presenterm -x -c ./config/presenterm.yml $1
