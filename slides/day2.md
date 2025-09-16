@@ -467,3 +467,84 @@ fn main() {
 5. **Reusability**
    - Closures can be stored in variables, passed to functions, or returned from functions, making them highly versatile.
 
+---
+
+```rust +exec
+type DemoArray = [u32; 1024];
+
+fn main() {
+  let mut a: DemoArray = core::array::from_fn(|i| i as u32 + 1);
+  //from_fn here allows you to create an array from closures
+
+  let mut show_array = || {
+    a[0] += 1;
+    println!("{} {}", a[0], a[1023]);
+  };
+
+  show_array();
+  show_array();
+}
+```
+
+---
+
+# The `core` library
+
+## Rust Core Library – Key Points
+
+1. **Minimal Foundation**
+   - The core library (`core`) provides Rust’s essential building blocks without relying on an operating system.
+<!--new_lines: 1-->
+2. **No Standard Library Dependency**
+   - It is independent of the standard library (`std`) and is suitable for bare-metal or embedded systems.
+<!--new_lines: 1-->
+
+3. **Essential Traits and Types**
+   - It defines fundamental traits (like `Copy`, `Clone`, `Iterator`) and types (like `Option`, `Result`).
+<!--new_lines: 1-->
+
+4. **Platform Independence**
+   - Since it avoids OS features, the `core` library works across all platforms, including `no_std` environments.
+
+<!--new_lines: 1-->
+5. **Foundation for std**
+   - The standard library (`std`) is built on top of `core`, adding extra functionality like I/O, threading, and heap allocation.
+
+---
+
+# `core` vs `std`
+
+<!--new_lines: 2-->
+
+| Aspect | `core` | `std` |
+| --------------- | --------------- | --------------- |
+| **Dependency** | No OS required | Depends on OS |
+|        |        |       |
+| **Scope** | Minimal, contains only essential types and traits | Full standard library |
+|        |        |       |
+| **Key features** | Provides `Option`, `Result`, `Iterator`, `Clone` etc | Adds I/O, networking, threads.. |
+|        |        |       |
+| **Use Case** | `no_std`, Embedded Systems | General-purpose applications |
+|        |        |       |
+| **Relationship** | Foundation for `std` | Built on top of `core` |
+
+
+<!--end_slide-->
+
+# How to use Rust in `no_std` environments
+
+<!--new_lines: 1-->
+
+To use rust in `no_std` environments, all we have to do is add a `no_std` tag at the top of the code
+
+```rust
+#[no_std]
+
+fn main() {
+  todo!();
+}
+```
+
+This is the start of Embedded Rust.
+
+Note that `println!()` won't work in `no_std` as `println!()` is a part of `std` library.
