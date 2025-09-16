@@ -296,22 +296,174 @@ fn main() {
 
 # `enum` and `match`
 
-```rust +exec
+<!--column_layout: [2, 1]-->
+
+<!--column: 0-->
+
+```rust +exec +id:enum
 # #![allow(warnings)]
 #[derive(Debug, Clone)]
 enum Color {
   Red, 
   Green,
   Blue,
+  Any(f32, f32, f32),      // A Tuple struct inside enum
 }
-
 fn main() {
-  let color = Color::Red;
+  let color = Color::Any(0.8, 0.6, 0.4);
   match color {
       Color::Red => println!("RED"),
       Color::Green => println!("GREEN"),
       Color::Blue => println!("BLUE"),
+      Color::Any(r, g, b) => {
+        if r > g && r > b {
+            println!("It's reddish : {} {} {}", r, g, b);
+        }
+      
+      }
       _ => println!("Invalid color")
   }
 }
 ```
+
+<!--column: 1--> 
+
+<!--snippet_output: enum-->
+
+---
+
+# Arrays in Rust
+
+```rust +exec
+fn main() {
+  let _a: [u32; 3] = [1, 2, 3];     // Size of array here is 3
+  // let _a: [u32; 3] = [1, 2, 3, 4];  // Error
+  let _b: [u32; 10] = [3; 10];   // An array of 3 repeated 10 times
+  //Iterating through arrays
+  let mut c: [u32; 3] = [4; 3];
+
+  for i in 0..3 {
+      c[i] = i as u32 + 1;     // Converting usize to u32
+  }
+
+  println!("{} {}", c[0], c[2]);
+}
+```
+
+---
+
+# Rust Arrays
+
+1. **Fixed Size**
+   - Arrays have a length decided at compile time, and this size cannot change once defined.
+<!--new_lines: 1-->
+2. **Type-Safe**
+   - Every element in an array must have the same data type, ensuring consistency and preventing type errors.
+
+<!--new_lines: 1-->
+3. **Length as Part of the Type**
+   - The size of an array is part of its type, meaning arrays of different lengths are considered different types.
+
+<!--new_lines: 1-->
+4. **Initialization Options**
+   - Arrays can be created by listing values explicitly or by repeating a single value for a set length.
+
+<!--new_lines: 1-->
+5. **Index-Based Access**
+   - Elements are accessed using zero-based indexing, and invalid indices will cause runtime errors.
+
+<!--new_lines: 1-->
+6. **Efficient Storage**
+   - Arrays are stored in a contiguous block of memory, making access and iteration very efficient.
+
+---
+
+# `type` keyword in Rust
+
+```rust +exec
+type DemoArray = [u32; 3];      // Alias for an array of u32 and size 3
+
+fn show_array(arr: DemoArray) {
+  for i in 0..arr.len() {
+    println!("{}", arr[i]);
+  }
+}
+
+fn main() {
+  let a: DemoArray = [4; 3];
+  show_array(a);
+}
+```
+
+---
+
+# Rust `type` Keyword
+
+1. **Type Aliases**
+   - The `type` keyword creates an alias for an existing type, making code shorter and more readable.
+<!--new_lines: 1-->
+2. **No New Type Creation**
+   - Using `type` does not define a brand-new type; it only provides another name for an existing one.
+
+<!--new_lines: 1-->
+3. **Improves Clarity**
+   - Complex or frequently used types can be given simpler names, which makes function signatures and code easier to understand.
+
+<!--new_lines: 1-->
+4. **Consistency in Code**
+   - A single alias can be reused throughout the code, reducing duplication and potential errors.
+
+<!--new_lines: 1-->
+5. **Flexibility with Generics**
+   - Type aliases can also be used with generics, helping simplify generic-heavy code.
+
+<!--new_lines: 1-->
+6. **Common in Libraries**
+   - Rust libraries often use type aliases to provide clearer, domain-specific names for standard types.
+
+---
+
+# Closures in Rust
+
+``` rust +exec
+fn main() {
+    // A closure that adds two numbers
+    let add = |x: i32, y: i32| -> i32 {
+        x + y
+    };
+
+    // Using the closure
+    let result = add(5, 3);
+    println!("Result: {}", result);
+
+    // A closure that captures a variable from its environment
+    let factor = 10;
+    let multiply = |x: i32| x * factor;
+
+    let result2 = multiply(6);
+    println!("Result with capture: {}", result2);
+}
+```
+
+---
+
+## Rust Closures – Key Points
+
+1. **Anonymous Functions**
+   - Closures are functions without names that can be defined directly where they are used.
+<!--new_lines: 1-->
+2. **Flexible Syntax**
+   - They can accept parameters and return values, often with simpler syntax than regular functions.
+
+<!--new_lines: 1-->
+3. **Environment Capture**
+   - Closures can capture variables from the surrounding scope, either by borrowing or taking ownership.
+
+<!--new_lines: 1-->
+4. **Type Inference**
+   - The Rust compiler usually infers parameter and return types for closures, reducing the need for explicit annotations.
+
+<!--new_lines: 1-->
+5. **Reusability**
+   - Closures can be stored in variables, passed to functions, or returned from functions, making them highly versatile.
+
