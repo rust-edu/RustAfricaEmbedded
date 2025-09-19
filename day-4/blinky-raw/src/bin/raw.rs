@@ -30,9 +30,9 @@ const ROW1_PIN: usize = 21;
 const COL1_PORT: usize = GPIO_P0;
 const COL1_PIN: usize = 28;
 
-/// Spin delay for about 1 second.
+/// Spin delay for about ½ second.
 fn delay() {
-    for _ in 0..16_000_000 {
+    for _ in 0..4_000_000 {
         asm::nop();
     }
 }
