@@ -6,14 +6,15 @@ This repo is the "home page" for the Rust Africa Embedded
 
 ## Slides
 
+[contributed by Vaishnav Sabari Girish]
+
 The slides can be presented using [`presenterm`](https://github.com/mfontanini/presenterm)
 
 You can either present the markdown files directly or download the PDF files. 
 
 You can find the slides [here](./slides/slides.md)
 
-
-## Other links
+## General-Purpose Links
 
 * [Course Outline](course-outline.md)
 * [Rustup](https://rustup.rs)
@@ -25,3 +26,9 @@ You can find the slides [here](./slides/slides.md)
 * [Rustlings](https://rustlings.rust-lang.org/)
 * [Rustinfinity](https://www.rustfinity.com/)
 * [The Rust Book Experiment](https://rust-book.cs.brown.edu/)
+
+## MB2 Links
+
+* [MB2 Schematics](https://tech.microbit.org/hardware/schematic/)
+* [nRF52833 Manual](https://docs.nordicsemi.com/bundle/ps_nrf52833/page/keyfeatures_html5.html)
+

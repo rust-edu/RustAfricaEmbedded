@@ -30,10 +30,10 @@ Bart Massey 2025-09
    * Loading ARM code on the MB2
 
 2. Blinky at several levels
+   * Basic electricity
    * Embedded dev boards / micro:bit v2 (MB2)
    * microcontrollers / nRF52833
    * **Reading:** [*Rust Embedded Discovery Book*] chapter 6
-   * Basic electricity
    * GPIO pins
    * Using Rust crates
    * Lighting an LED
