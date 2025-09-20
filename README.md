@@ -32,3 +32,6 @@ You can find the slides [here](./slides/slides.md)
 * [MB2 Schematics](https://tech.microbit.org/hardware/schematic/)
 * [nRF52833 Manual](https://docs.nordicsemi.com/bundle/ps_nrf52833/page/keyfeatures_html5.html)
 
+## Supplementary Video
+
+* [Raw Blinky, or Hello Rust](https://archive.org/download/raw-blinky/raw-blinky.mkv)
