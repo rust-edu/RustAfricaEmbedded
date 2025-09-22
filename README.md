@@ -10,7 +10,23 @@ This repo is the "home page" for the Rust Africa Embedded
 
 The slides can be presented using [`presenterm`](https://github.com/mfontanini/presenterm)
 
-You can either present the markdown files directly or download the PDF files. 
+You can present the slides as follows : 
+
+```bash
+presenterm +x <slide>.md
+```
+
+Or use the `present.sh` script as follows
+
+```bash 
+./present.sh <slide>.md
+```
+
+To export the slides to PDF of HTML use the `export.sh` script as follows
+
+```bash
+./export.sh <slide>.md
+```
 
 You can find the slides [here](./slides/slides.md)
 
