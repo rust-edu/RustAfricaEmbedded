@@ -29,22 +29,30 @@ Bart Massey 2025-09
    * Rust cross-compilation
    * Loading ARM code on the MB2
 
-2. Blinky at several levels
-   * Basic electricity
-   * Embedded dev boards / micro:bit v2 (MB2)
-   * microcontrollers / nRF52833
-   * **Reading:** [*Rust Embedded Discovery Book*] chapter 6
-   * GPIO pins
-   * Using Rust crates
-   * Lighting an LED
-   * Blinking an LED
+2. Simple I/O
+   * Blinkies at several levels
+     * Basic electricity
+     * Embedded dev boards / micro:bit v2 (MB2)
+     * microcontrollers / nRF52833
+     * **Reading:** [*Rust Embedded Discovery Book*] chapter 6
+     * GPIO pins
+     * Using Rust crates
+     * Layers
+       * Device registers
+       * Peripheral Access Crate (PAC)
+       * Hardware Abstraction Layer (HAL)
+       * Board Support Package (BSP)
+     * Lighting an LED
+     * Blinking an LED
+   * Simple Output
+     * **Reading:** [*Rust Embedded Discovery Book*] chapter 7
+     * Using the `microbit` Board Support Package (BSP)
+     * LED Array / LED Roulette
 
 ## Week 3: Input and Output
 
-1. Simple I/O
-   * **Reading:** [*Rust Embedded Discovery Book*] chapters 7-8
-   * Using the `microbit` Board Support Package (BSP)
-   * LED Array / LED Roulette
+1. Simple Input
+   * **Reading:** [*Rust Embedded Discovery Book*] chapter 8
    * Buttons / Turn Signal
 
 2. Serial I/O and protocols
