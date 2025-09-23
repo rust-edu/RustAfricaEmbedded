@@ -32,6 +32,7 @@ dependencies = [
  "embedded-hal 1.0.0",
  "microbit-v2",
  "nrf52833-hal",
+ "nrf52833-pac",
  "panic-halt",
 ]
 

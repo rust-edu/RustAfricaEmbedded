@@ -3,8 +3,7 @@
 
 use cortex_m::asm::nop;
 use cortex_m_rt::entry;
-use embedded_hal::digital::OutputPin;
-use nrf52833_hal::{gpio, pac};
+use nrf52833_pac as pac;
 use panic_halt as _;
 
 fn wait() {
@@ -16,14 +15,26 @@ fn wait() {
 #[entry]
 fn main() -> ! {
     let peripherals = pac::Peripherals::take().unwrap();
-    let p0 = gpio::p0::Parts::new(peripherals.P0);
-    let mut row1 = p0.p0_21.into_push_pull_output(gpio::Level::High);
-    let _col1 = p0.p0_28.into_push_pull_output(gpio::Level::Low);
+    let p0 = peripherals.P0;
+
+    p0.pin_cnf[21].write(|w| {
+        w.dir().output()
+    });
+    p0.pin_cnf[28].write(|w| {
+        w.dir().output()
+    });
+    p0.outclr.write(|w| {
+        w.pin28().clear()
+    });
 
     loop {
+        p0.outset.write(|w| {
+            w.pin21().set()
+        });
         wait();
-        row1.set_high().unwrap();
+        p0.outclr.write(|w| {
+            w.pin21().clear()
+        });
         wait();
-        row1.set_low().unwrap();
     }
 }
