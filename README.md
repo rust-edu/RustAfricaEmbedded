@@ -18,6 +18,7 @@ You can find the slides [here](./slides/slides.md)
 
 * [Course Outline](course-outline.md)
 * [Rustup](https://rustup.rs)
+* [*course playlist*](https://youtube.com/playlist?list=PLQhmgrhp2QzWPv9MPg-RXBVRWNixMCY3-&si=aXNFPztUOlBy4OhC)
 * [*The Rust Programming Language*](https://doc.rust-lang.org/book/)
 * [*Rust Embedded Discovery Book*](https://rust-embedded.github.io/discovery-mb2)
 * [Rust-Edu Zulip](https://zulip.rust-edu.org) `#RustAfricaEmbedded`
@@ -34,4 +35,4 @@ You can find the slides [here](./slides/slides.md)
 
 ## Supplementary Video
 
-* [Raw Blinky, or Hello Rust](https://archive.org/download/raw-blinky/raw-blinky.mkv)
+* [Raw Blinky, or Hello Rust](https://youtu.be/IjlbuPZTluU?si=JjsgiWSNBNZimEqD)
