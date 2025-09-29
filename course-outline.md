@@ -51,25 +51,25 @@ Bart Massey 2025-09
 
 ## Week 3: Input and Output
 
-1. Simple Input
-   * **Reading:** [*Rust Embedded Discovery Book*] chapter 8
-   * Buttons / Turn Signal
+1. More I/O
+  * Simple Input
+    * **Reading:** [*Rust Embedded Discovery Book*] chapter 8
+    * Buttons / Turn Signal
+  * Serial I/O and protocols
+    * **Reading:** [*Rust Embedded Discovery Book*] chapters 10-12, 14
+    * Asynchronous serial communication
+    * I2C
+    * Reading the I2C accelerometer
 
-2. Serial I/O and protocols
-   * **Reading:** [*Rust Embedded Discovery Book*] chapters 10-12, 14
-   * Asynchronous serial communication
-   * I2C
-   * Reading the I2C accelerometer
-
-## Week 4: Fancy Stuff
-
-1. Interrupts
+2. Interrupts
    * **Reading:** [*Rust Embedded Discovery Book*] chapter 15
    * Interrupts from the CPU point of view
    * Setting up interrupt handlers
    * Communicating between interrupt handlers and main code
+
+## Week 4: Wrap-Up
    
-2. Concluding
+1. Concluding
    * **Reading:** [*Rust Embedded Discovery Book*] chapter 16
    * Snake Game!
    * Topics not covered: DMA, ADC, PWM, speaker, microphone,
